@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const EstudanteView = () => {
-  
-    const [estudantes, setEstudantes] = useState([]);
+  const [estudantes, setEstudantes] = useState([]);
 
   useEffect(() => {
     loadEstudantes();
@@ -11,12 +10,12 @@ const EstudanteView = () => {
 
   const loadEstudantes = async () => {
     const result = await axios.get("http://localhost:9192/estudantes", {
-        validateStatus: () => {
-            return true;
-        }
+      validateStatus: () => {
+        return true;
+      },
     });
-    if(result.status === 302){
-        setEstudantes(result.data);
+    if (result.status === 302) {
+      setEstudantes(result.data);
     }
   };
 
