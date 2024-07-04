@@ -21,19 +21,19 @@ const EstudanteView = () => {
 
   return (
     <section>
-      <table>
+      <table className="table table-bordered table-hover">
         <thead>
-          <tr>
+          <tr className="text-center">
             <th>Id</th>
             <th>Primeiro Nome</th>
             <th>Ultimo Nome</th>
             <th>Email</th>
             <th>Departamento</th>
-            <th>Ações</th>
+            <th colSpan={3}>Ações</th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="text-center">
           {estudantes.map((estudante, index) => (
             <tr key={estudante.estudanteId}>
               <th scope="row" key={index}>
@@ -43,9 +43,15 @@ const EstudanteView = () => {
               <td>{estudante.ultimoNome}</td>
               <td>{estudante.email}</td>
               <td>{estudante.departamento}</td>
-              <td>Visualizar</td>
-              <td>Editar</td>
-              <td>Excluir</td>
+              <td className="mx-2">
+                <button className="btn btn-info">Visualizar</button>
+              </td>
+              <td className="mx-2">
+                <button className="btn btn-warning">Editar</button>
+              </td>
+              <td className="mx-2">
+                <button className="btn btn-danger">Excluir</button>
+              </td>
             </tr>
           ))}
         </tbody>
