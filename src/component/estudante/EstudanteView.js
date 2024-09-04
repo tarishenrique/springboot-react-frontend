@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa6";
 
 const EstudanteView = () => {
   const [estudantes, setEstudantes] = useState([]);
@@ -21,7 +24,7 @@ const EstudanteView = () => {
 
   return (
     <section>
-      <table className="table table-bordered table-hover">
+      <table className="table table-bordered table-hover shadow">
         <thead>
           <tr className="text-center">
             <th>Id</th>
@@ -44,13 +47,19 @@ const EstudanteView = () => {
               <td>{estudante.email}</td>
               <td>{estudante.departamento}</td>
               <td className="mx-2">
-                <button className="btn btn-info">Visualizar</button>
+                <Link to={`/visualizar-estudante/${estudante.estudanteId}`} className="btn btn-info">
+                  <FaEye/>
+                </Link>
               </td>
               <td className="mx-2">
-                <button className="btn btn-warning">Editar</button>
+                <Link to={`/editar-estudante/${estudante.estudanteId}`} className="btn btn-warning">
+                  <FaEdit/>
+                </Link>
               </td>
               <td className="mx-2">
-                <button className="btn btn-danger">Excluir</button>
+                <button className="btn btn-danger">
+                  <FaTrashAlt/>
+                </button>
               </td>
             </tr>
           ))}

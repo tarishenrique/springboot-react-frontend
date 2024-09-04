@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
         <div className="container-fluid">
             <Link to={"/"} className="navbar-brand" >
                 Navbar
@@ -25,8 +25,8 @@ const NavBar = () => {
                     </li>
                 </ul>
                 <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
+                    <input className="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"/>
+                    <button className="btn btn-outline-success" type="submit">Pesquisar</button>
                 </form>
             </div>
         </div>
