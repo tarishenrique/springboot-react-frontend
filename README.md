@@ -1,6 +1,7 @@
 npm start // Inicializa aplicação
 npm i bootstrap --save
 npm i react-router-dom
+rafce - reactArrowFunctionExportComponent - Atalho para criação de componente
 
 # Getting Started with Create React App
 

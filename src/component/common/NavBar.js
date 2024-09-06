@@ -19,7 +19,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={"/adicionar-estudantes"} className="nav-link">
+                        <Link to={"/adicionar-estudante"} className="nav-link">
                             Incluir Novo Estudante
                         </Link>
                     </li>
