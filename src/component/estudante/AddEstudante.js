@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AddEstudante = () => {
+
+    let navigate = useNavigate();
 
     const[estudante, setEstudante] = useState({
         primeiroNome: '',
@@ -20,6 +22,7 @@ const AddEstudante = () => {
     const salvarEstudante = async(e) => {
         e.preventDefault();
         await axios.post("http://localhost:9192/estudantes", estudante);
+        navigate("/visualizar-estudantes");
     }
 
   return (
