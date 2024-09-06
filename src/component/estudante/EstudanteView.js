@@ -3,9 +3,11 @@ import axios from "axios";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
+import Pesquisa from "../common/Pesquisa";
 
 const EstudanteView = () => {
   const [estudantes, setEstudantes] = useState([]);
+  const [pesquisa, setPesquisa] = useState("");
 
   useEffect(() => {
     loadEstudantes();
@@ -29,6 +31,10 @@ const EstudanteView = () => {
 
   return (
     <section>
+    <Pesquisa
+      pesquisa={pesquisa}
+      setPesquisa={setPesquisa}
+    />
       <table className="table table-bordered table-hover shadow">
         <thead>
           <tr className="text-center">
@@ -42,7 +48,10 @@ const EstudanteView = () => {
         </thead>
 
         <tbody className="text-center">
-          {estudantes.map((estudante, index) => (
+          {estudantes
+          .filter((estudante) => 
+            estudante.primeiroNome.toLowerCase().includes(pesquisa))
+          .map((estudante, index) => (
             <tr key={estudante.estudanteId}>
               <th scope="row" key={index}>
                 {index + 1}
